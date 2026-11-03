@@ -1,26 +1,8 @@
-
 # melbairbnbexplore
-
-<!-- badges: start -->
-<!-- badges: end -->
-
-The goal of melbairbnbexplore is to ...
-
+Prospective Airbnb host in Melbourne - How do location & property type affect nightly price?
+## Note
+For Melbourne, InsideAirbnb provides neighbourhood_cleansed as Local Government Area (Banyule, Bayside etc.) rather than individual suburbs. We use this as our location proxy.
 ## Installation
-
-You can install the development version of melbairbnbexplore from [GitHub](https://github.com/) with:
-
-``` r
-# install.packages("pak")
-pak::pak("ETC5523-2026/etc5523-assignment-4-adityasharma0404")
-```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(melbairbnbexplore)
-## basic example code
-```
-
+```r
+# install.packages("devtools")
+devtools::install_github("ETC5523-2026/etc5523-assignment-4-adityasharma0404")

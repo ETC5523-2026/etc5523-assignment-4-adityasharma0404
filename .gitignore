@@ -6,3 +6,5 @@ data-raw/listings.csv
 data-raw/listings.csv.gz
 data-raw/listings.csv.zip
 inst/doc
+.quarto
+vignettes/.quarto

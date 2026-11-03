@@ -3,9 +3,9 @@ Title: Interactive Exploration of Melbourne Airbnb Prices
 Version: 0.0.0.9000
 Authors@R: 
     person("Aditya", "Sharma", , "asha0404@student.monash.edu", role = c("aut", "cre"))
-Description: Data product for prospective Airbnb hosts in Melbourne to
-    explore price drivers. Includes cleaned Airbnb data, a summary
-    function, and a Shiny app.
+Description: An R package with cleaned InsideAirbnb Melbourne data (2026-09-16),
+    functions to summarise prices, and a Shiny app to help prospective hosts
+    understand how location and property type affect nightly price.
 License: MIT + file LICENSE
 Config/roxygen2/version: 8.1.1
 Encoding: UTF-8
@@ -17,9 +17,14 @@ Imports:
     readr,
     shiny
 Depends: 
-    R (>= 3.5)
+    R (>= 4.1.0)
 LazyData: true
 Suggests: 
+    dplyr,
+    ggplot2,
     knitr,
+    plotly,
+    quarto,
     rmarkdown
 VignetteBuilder: quarto
+URL: https://github.com/ETC5523-2026/etc5523-assignment-4-adityasharma0404, https://etc5523-2026.github.io/etc5523-assignment-4-adityasharma0404/

@@ -5,7 +5,7 @@
 #'
 #' @format A tibble with 5 columns:
 #' \describe{
-#'   \item{neighbourhood}{Suburb / neighbourhood}
+#'   \item{neighbourhood}{Local Government Area / Council region (InsideAirbnb uses LGA for Melbourne, e.g. Banyule, Bayside)}
 #'   \item{room_type}{Entire home, Private room, etc.}
 #'   \item{price}{Nightly price in AUD}
 #'   \item{number_of_reviews}{Number of reviews}
