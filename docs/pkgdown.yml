@@ -1,0 +1,6 @@
+pandoc: 3.6.3
+pkgdown: 2.2.1
+pkgdown_sha: ~
+articles:
+  melbairbnbexplore: melbairbnbexplore.html
+last_built: 2026-11-03T05:46Z
