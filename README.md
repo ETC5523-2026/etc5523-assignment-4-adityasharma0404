@@ -118,16 +118,8 @@ Aditya Sharma - Author, maintainer - asha0404@student.monash.edu
 
 I used Meta AI and for debugging help:
 
-<<<<<<< HEAD
-Debugged DATASET not found error in data-raw script (file still said DATASET instead of melb_airbnb)
-Fixed summarise_prices not found and VignetteBuilder quarto not declared by adding @export and adding quarto to Suggests
-Fixed GitHub Pages build failing due to docs in .gitignore and missing .nojekyll
-Fixed plotly hover showing $99 for all properties
-Helped draft README and vignette structure
-=======
 - Debugged `DATASET not found` error in data-raw script (file still said DATASET instead of melb_airbnb)
 - Fixed `summarise_prices` not found and `VignetteBuilder quarto not declared` by adding `@export` and adding `quarto` to Suggests
 - Fixed GitHub Pages build failing due to `docs` in `.gitignore` and missing `.nojekyll`
 - Fixed plotly hover showing $99 for all properties 
 - Helped draft README and vignette structure
->>>>>>> 9e08b882f8384c8d77cb23298d0b855ebd304ba5
