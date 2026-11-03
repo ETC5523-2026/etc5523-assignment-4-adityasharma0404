@@ -12,6 +12,7 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Imports: 
     bslib,
+    readr,
     dplyr,
     ggplot2,
     plotly,
