@@ -123,3 +123,5 @@ I used Meta AI for debugging help:
 - Fixed GitHub Pages build failing due to `docs` in `.gitignore` and missing `.nojekyll`
 - Fixed plotly hover showing $99 for all properties 
 - Helped draft README and vignette structure
+
+All analyses, dataset identification, package creation and creativeee ideas were my own.
