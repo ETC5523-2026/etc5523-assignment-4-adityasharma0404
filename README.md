@@ -116,7 +116,7 @@ Aditya Sharma - Author, maintainer - asha0404@student.monash.edu
 
 ## AI Use Statement
 
-I used Meta AI and for debugging help:
+I used Meta AI for debugging help:
 
 - Debugged `DATASET not found` error in data-raw script (file still said DATASET instead of melb_airbnb)
 - Fixed `summarise_prices` not found and `VignetteBuilder quarto not declared` by adding `@export` and adding `quarto` to Suggests
