@@ -46,11 +46,7 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="melbairbnbexplore">melbairbnbexplore<a class="anchor" aria-label="anchor" href="#melbairbnbexplore"></a>
-</h1></div>
-<p>Prospective Airbnb host in Melbourne - How do location &amp; property type affect nightly price? ## Note For Melbourne, InsideAirbnb provides neighbourhood_cleansed as Local Government Area (Banyule, Bayside etc.) rather than individual suburbs. We use this as our location proxy. ## Installation ```r # install.packages(“devtools”) devtools::install_github(“ETC5523-2026/etc5523-assignment-4-adityasharma0404”)</p>
-</div>
+  <main id="main" class="col-md-9"><p>cat(’# melbairbnbexplore ## Overview <code>melbairbnbexplore</code> is an R package for ETC5523 Assignment 4. It explores Melbourne Airbnb listing prices for <strong>prospective hosts</strong>. Research Question: <strong>How do location and property type affect price in Melbourne?</strong> Important: In InsideAirbnb Melbourne, <code>neighbourhood</code> is actually <strong>Local Government Area (LGA) / Council Area</strong> (e.g., Bayside, Banyule, Stonnington), not suburb. Documented as such in data docs, vignette and app. ## Data Source: InsideAirbnb Melbourne 2026-09-16 (25,000+ listings, 90 cols). Raw file <code>data-raw/listings.csv</code> is gitignored. Cleaning in <code>data-raw/melb_airbnb_raw.R</code> creates <code>data/melb_airbnb.rda</code> with 5 cols: neighbourhood (LGA), room_type, price ($ cleaned to numeric, filtered &gt;0 &amp; &lt;1000), number_of_reviews, review_scores_rating. ## Installation ```r # install.packages(“pak”) pak::pak(“ETC5523-2026/etc5523-assignment-4-adityasharma0404”)</p>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
