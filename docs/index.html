@@ -46,7 +46,128 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9"><p>cat(’# melbairbnbexplore ## Overview <code>melbairbnbexplore</code> is an R package for ETC5523 Assignment 4. It explores Melbourne Airbnb listing prices for <strong>prospective hosts</strong>. Research Question: <strong>How do location and property type affect price in Melbourne?</strong> Important: In InsideAirbnb Melbourne, <code>neighbourhood</code> is actually <strong>Local Government Area (LGA) / Council Area</strong> (e.g., Bayside, Banyule, Stonnington), not suburb. Documented as such in data docs, vignette and app. ## Data Source: InsideAirbnb Melbourne 2026-09-16 (25,000+ listings, 90 cols). Raw file <code>data-raw/listings.csv</code> is gitignored. Cleaning in <code>data-raw/melb_airbnb_raw.R</code> creates <code>data/melb_airbnb.rda</code> with 5 cols: neighbourhood (LGA), room_type, price ($ cleaned to numeric, filtered &gt;0 &amp; &lt;1000), number_of_reviews, review_scores_rating. ## Installation ```r # install.packages(“pak”) pak::pak(“ETC5523-2026/etc5523-assignment-4-adityasharma0404”)</p>
+  <main id="main" class="col-md-9"><div class="section level1">
+<div class="page-header"><h1 id="melbairbnbexplore">melbairbnbexplore<a class="anchor" aria-label="anchor" href="#melbairbnbexplore"></a>
+</h1></div>
+<div class="section level2">
+<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
+<p><code>melbairbnbexplore</code> is an R package deveeloped by Aditya Sharma, a student of Business Analytics at Monash University. It explores Melbourne Airbnb listing prices for <strong>prospective hosts</strong> who want to understand pricing by location and property type.</p>
+<p><strong>Research Question:</strong> How do location (Council Area / LGA) and property type affect nightly price in Melbourne?</p>
+<p><strong>Important Data Note:</strong> For Melbourne, InsideAirbnb provides <code>neighbourhood_cleansed</code> as <strong>Local Government Area (LGA) / Council Area</strong> (e.g., Banyule, Bayside, Stonnington, Glen Eira) rather than individual suburbs. This is documented in <code>R/data.R</code>, the vignette, and the Shiny app. We use LGA as our location proxy.</p>
+</div>
+<div class="section level2">
+<h2 id="data">Data<a class="anchor" aria-label="anchor" href="#data"></a>
+</h2>
+<ul>
+<li>
+<strong>Source:</strong> InsideAirbnb Melbourne 2026-09-16 (25k+ listings) - <a href="https://data.insideairbnb.com/australia/vic/melbourne/2026-09-16/data/listings.csv.gz" class="external-link uri">https://data.insideairbnb.com/australia/vic/melbourne/2026-09-16/data/listings.csv.gz</a>
+</li>
+<li>
+<strong>Raw:</strong> <code>data-raw/listings.csv</code> (70MB, 90 columns) - gitignored via <code>.gitignore</code> to avoid GitHub large file error</li>
+<li>
+<strong>Cleaning:</strong> <code>data-raw/melb_airbnb_raw.R</code> creates <code>data/melb_airbnb.rda</code> with 5 relevant columns:
+<ul>
+<li>
+<code>neighbourhood</code> - LGA / Council Area (Banyule etc.)</li>
+<li>
+<code>room_type</code> - Entire home/apt, Private room, Shared room</li>
+<li>
+<code>price</code> - Cleaned from “$250.00” string to numeric, filtered &gt;0 &amp; &lt;1000</li>
+<li><code>number_of_reviews</code></li>
+<li><code>review_scores_rating</code></li>
+</ul>
+</li>
+<li>
+<strong>Reproducibility:</strong> Raw download and cleaning steps are fully documented in <code>data-raw/</code>
+</li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can install the development version from GitHub:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"ETC5523-2026/etc5523-assignment-4-adityasharma0404"</span><span class="op">)</span></span></code></pre></div>
+<p>Or via devtools:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/install-deprecated.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"ETC5523-2026/etc5523-assignment-4-adityasharma0404"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ETC5523-2026/etc5523-assignment-4-adityasharma0404" class="external-link">melbairbnbexplore</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># View cleaned data</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">melb_airbnb</span><span class="op">)</span></span>
+<span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">melb_airbnb</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Summarise prices by LGA and room type</span></span>
+<span><span class="fu"><a href="reference/summarise_prices.html">summarise_prices</a></span><span class="op">(</span><span class="va">melb_airbnb</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Launch interactive Shiny app</span></span>
+<span><span class="fu"><a href="reference/launch_app.html">launch_app</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
+</h2>
+<ul>
+<li>
+<code>summarise_prices(data)</code>: Returns a tibble with average price by <code>neighbourhood</code> (LGA) and <code>room_type</code>. Uses <code>.data$</code> pronoun and <code><a href="https://rdrr.io/r/utils/globalVariables.html" class="external-link">utils::globalVariables()</a></code> to pass R CMD check 0-0-0.</li>
+<li>
+<code><a href="reference/launch_app.html">launch_app()</a></code>: Launches Shiny app from <code>inst/app/app.R</code>. Includes fallback to <code>inst/app</code> when package is loaded via <code><a href="https://devtools.r-lib.org/reference/load_all.html" class="external-link">devtools::load_all()</a></code>.</li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="shiny-app">Shiny App<a class="anchor" aria-label="anchor" href="#shiny-app"></a>
+</h2>
+<p>Located in <code>inst/app/app.R</code>, launched via <code><a href="reference/launch_app.html">launch_app()</a></code>.</p>
+<p>Features: - Filters: Council Area (LGA) multi-select, Room Type multi-select, Max Price slider - Value boxes: Listings Found, Average Price, Top Council - Interactive plot: <code>plotly</code> histogram with <strong>aggregated bins</strong> (stacked by room_type, Set2 palette). Hover shows true bin count and price bin, not individual tiny squares. Drag to zoom, double-click to reset. - Summary table: Uses <code><a href="reference/summarise_prices.html">summarise_prices()</a></code> on filtered data - Insight: Explains why Shared Room can have higher average than Entire Home (rare luxury shared listings skew average, e.g., $225 shared in Bayside vs $98 entire in Banyule). Filter to single LGA for fair comparison.</p>
+</div>
+<div class="section level2">
+<h2 id="vignette">Vignette<a class="anchor" aria-label="anchor" href="#vignette"></a>
+</h2>
+<p><code>vignettes/melbairbnbexplore.qmd</code> (Quarto qmd, not Rmd) includes: - Intended user and research question - Data source and cleaning steps - Function demo - LGA note - Shiny app usage - Conclusion</p>
+<p>Build with:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">quarto</span><span class="fu">::</span><span class="fu"><a href="https://quarto-dev.github.io/quarto-r/reference/quarto_render.html" class="external-link">quarto_render</a></span><span class="op">(</span><span class="st">"vignettes/melbairbnbexplore.qmd"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="pkgdown-site">pkgdown Site<a class="anchor" aria-label="anchor" href="#pkgdown-site"></a>
+</h2>
+<p>Site built with <code><a href="https://pkgdown.r-lib.org/reference/build_home.html" class="external-link">pkgdown::build_home()</a></code> / <code>build_site()</code> and deployed via GitHub Pages (main branch /docs folder + <code>.nojekyll</code> file).</p>
+<p>Live site: <a href="https://etc5523-2026.github.io/etc5523-assignment-4-adityasharma0404/" class="uri">https://etc5523-2026.github.io/etc5523-assignment-4-adityasharma0404/</a></p>
+<ul>
+<li>
+<code>url</code> field fixed in both <code>DESCRIPTION</code> and <code>_pkgdown.yml</code>
+</li>
+<li>
+<code>docs/</code> folder is NOT gitignored (required for Pages)</li>
+<li>
+<code>vignettes/.quarto</code> and <code>.quarto</code> cache folders are gitignored to avoid hidden file NOTE and clock NOTE</li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="r-cmd-check">R CMD Check<a class="anchor" aria-label="anchor" href="#r-cmd-check"></a>
+</h2>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/check.html" class="external-link">check</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># 0 errors ✔ | 0 warnings ✔ | 0 notes ✔</span></span></code></pre></div>
+<p>Fixes applied for NOTES: - Hidden <code>vignettes/.quarto</code> folder deleted and gitignored - <code>plotly</code> moved from Imports to Suggests (only used in app, not package R code) - <code><a href="https://rdrr.io/r/utils/globalVariables.html" class="external-link">utils::globalVariables()</a></code> in <code>R/globals.R</code> for <code>neighbourhood</code>, <code>room_type</code>, <code>price</code>, <code>avg_price</code> - <code>R (&gt;= 4.1.0)</code> added for native pipe <code>|&gt;</code> syntax - Future timestamp NOTE fixed by cleaning <code>docs/</code> and <code>.quarto</code> cache</p>
+</div>
+<div class="section level2">
+<h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
+</h2>
+<p>MIT + file LICENSE</p>
+</div>
+<div class="section level2">
+<h2 id="developers">Developers<a class="anchor" aria-label="anchor" href="#developers"></a>
+</h2>
+<p>Aditya Sharma - Author, maintainer - <a href="mailto:asha0404@student.monash.edu" class="email">asha0404@student.monash.edu</a></p>
+</div>
+</div>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
