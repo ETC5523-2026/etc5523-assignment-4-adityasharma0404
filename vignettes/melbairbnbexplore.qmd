@@ -1,0 +1,50 @@
+---
+title: "Exploring Melbourne Airbnb Prices for Prospective Hosts"
+author: "Aditya Sharma"
+format: html
+vignette: |
+  %\VignetteIndexEntry{melbairbnbexplore}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| label: setup
+#| include: false
+knitr::opts_chunk$set(collapse = TRUE)
+library(melbairbnbexplore)
+library(dplyr)
+library(ggplot2)
+```
+
+## Intended User & Question
+**User:** Prospective Airbnb hosts in Melbourne.  
+**Question:** How do location and property type affect nightly price for a property?
+
+## Data
+Source: InsideAirbnb Melbourne 2026-09-16 (25k listings)  
+Raw: `data-raw/listings.csv` (70MB, 90 cols)  
+Clean: `melb_airbnb` 5 cols - see `data-raw/melb_airbnb_raw.R`
+
+```{r}
+head(melb_airbnb)
+```
+
+## Package Function
+```{r}
+summarise_prices(melb_airbnb)
+```
+
+```{r}
+melb_airbnb |>
+  group_by(neighbourhood) |>
+  summarise(avg_price = mean(price, na.rm=TRUE)) |>
+  arrange(desc(avg_price)) |>
+  head(10) |>
+  ggplot(aes(reorder(neighbourhood, avg_price), avg_price)) +
+  geom_col() + coord_flip() +
+  labs(x="Neighbourhood", y="Avg Price AUD")
+```
+
+## Shiny App
+Run `launch_app()` to explore prices by suburb and room type.
